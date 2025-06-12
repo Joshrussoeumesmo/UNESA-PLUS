@@ -1,0 +1,136 @@
+/* Estilos da Página de Manutenção - Tema Dev */
+:root {
+    --vermelho: #e50914;
+    --preto: #141414;
+    --branco: #fff;
+    --cinza-texto: #AAA;
+    --tech-accent: #00ff41; /* Um verde "hacker" para detalhes */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #111;
+}
+
+/* --- CORREÇÃO PRINCIPAL AQUI --- */
+.restricted-container {
+    flex-grow: 1; /* Faz o main ocupar o espaço vertical disponível */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center;
+    padding: 2rem;
+    padding-top: 200px; /* Adiciona um padding no topo para compensar a altura do header */
+}
+
+.restricted-content {
+    max-width: 700px;
+    padding: 3rem;
+    background-color: rgba(20, 20, 20, 0.5);
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.construction-icon {
+    width: 60px;
+    height: auto;
+    fill: #f6121d; /* Cor vermelha do seu ajuste */
+    margin-bottom: 2rem;
+}
+
+.restricted-content h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--branco);
+}
+
+/* Fix para o botão não se mover */
+.text-container {
+    min-height: 50px; /* Garante um espaço mínimo para o texto, evitando que o botão pule */
+}
+
+.typing-effect {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--cinza-texto);
+    line-height: 1.6;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid var(--tech-accent);
+    animation: 
+        typing 4s steps(48, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--tech-accent); }
+}
+
+
+/* Barra de Progresso */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--vermelho);
+    transform: translateX(-100%);
+    animation: loading 10s linear forwards; /* Duração igual ao timer */
+}
+
+@keyframes loading {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Mensagem de Redirecionamento */
+.redirect-message {
+    color: var(--cinza-texto);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.btn-back {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #f6121d;
+    color: var(--branco);
+    transform: scale(1.05);
+}
+
+/* Garante que o footer fique no final */
+.main-footer {
+    flex-shrink: 0;
+}

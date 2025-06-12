@@ -1,0 +1,91 @@
+/* CSS da Página de Login */
+html, body {
+    height: 100%;
+}
+
+body.login-body {
+    background-image: url('../Imagens/UI/background-login.jpg'); 
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header.login-header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 1.5rem 3rem;
+    width: 100%;
+}
+
+header.login-header .logo-img {
+    width: 140px;
+    height: auto;
+}
+
+main.container-login {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#caixa-login {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 50px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    min-height: 500px;
+}
+
+#caixa-login .form-control {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+#caixa-login .form-control::placeholder {
+    color: #8c8c8c;
+}
+
+#caixa-login .form-control:focus {
+    background-color: #444;
+    border-color: #fff;
+    box-shadow: none;
+    color: #fff;
+}
+
+.btn-brand {
+    background-color: #e50914;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+}
+.btn-brand:hover {
+    background-color: #f6121d;
+}
+
+.form-help a, .form-help .form-check-label {
+    color: #b3b3b3;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+.form-help a:hover {
+    text-decoration: underline;
+}
+
+.signup-link {
+    color: #b3b3b3;
+}
+.signup-link a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
+.signup-link a:hover {
+    text-decoration: underline;
+}

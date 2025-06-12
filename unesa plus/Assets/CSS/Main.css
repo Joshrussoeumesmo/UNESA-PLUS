@@ -1,0 +1,506 @@
+:root {
+    --vermelho: #e50914; 
+    --preto: #141414; 
+    --branco: #fff; 
+    --cinza-texto: #AAA;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background: var(--preto); 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    color: var(--branco); 
+}
+
+/* HEADER */
+.main-header { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1002; 
+    padding: 1.5rem 3rem; 
+    background: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, rgba(0,0,0,.7) 50%, rgba(0,0,0,0) 100%); 
+    transition: background-color 0.4s; 
+}
+
+.main-header.scrolled { 
+    background-color: var(--preto); 
+}
+
+.header-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.header-left, .header-right { 
+    display: flex; 
+    align-items: center; 
+}
+
+.logo-link img { 
+    width: 110px; 
+    margin-right: 25px; 
+}
+
+.main-nav a { 
+    text-decoration: none; 
+    color: var(--cinza-texto); 
+    margin-right: 20px; 
+    font-weight: 500; 
+    transition: color 0.3s; 
+}
+
+.main-nav a:hover, .main-nav a.active { 
+    color: var(--branco); 
+}
+
+/* MENU DE PERFIL */
+.profile-menu { 
+    position: relative; 
+
+}
+
+.profile-menu .profile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #87CEFA;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.profile-menu .profile-icon { 
+    color: #FFD700; 
+    font-size: 1.2rem; 
+}
+
+.profile-menu .dropdown-menu {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem; 
+    display: none; 
+}
+
+.profile-menu .dropdown-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.profile-menu:hover .profile-button { 
+    transform: scale(1.1); 
+}
+
+/* Conteúdo Principal */
+main {
+    padding-top: 80px; /* Ajuste para o header */
+}
+
+/* BANNER CAROUSEL */
+.hero-carousel .hero { 
+    height: 90vh; 
+    background-size: cover; 
+    background-position: center top; 
+    display: flex; 
+    align-items: center; 
+}
+
+/* Em Assets/CSS/Main.css */
+
+.hero-carousel .hero-1 { 
+    /* Caminho corrigido para "subir" da pasta CSS e entrar na de Imagens */
+    background-image: linear-gradient(to right, rgba(0,0,0,.8) 30%, transparent 70%), url('../Imagens/Banners/banner-vingadoresultimato.jpg'); 
+}
+
+.hero-carousel .hero-2 { 
+    /* Caminho corrigido para "subir" da pasta CSS e entrar na de Imagens */
+    background-image: linear-gradient(to right, rgba(0,0,0,.8) 30%, transparent 70%), url('../Imagens/Banners/banner-o-poderoso-chefao.webp'); 
+}
+
+.hero-content { 
+    padding-left: 3rem; 
+    max-width: 45%; 
+}
+
+.hero-title-img { 
+    width: 100%; 
+    max-width: 450px; 
+    margin-bottom: 1rem; 
+}
+
+/* ✅ CORRIGIDO: Cor explícita e sombra de texto melhorada para legibilidade */
+.hero-description { 
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    margin-bottom: 2rem; 
+    color: #f1f1f1; /* Cor mais clara para o texto */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Sombra mais forte */
+}
+
+.btn-hero { 
+    border: none; 
+    padding: 0.8rem 2rem; 
+    margin-right: 1rem; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all .3s; 
+    border-radius: 5px; 
+}
+
+.btn-hero.btn-play { 
+    background-color: var(--branco); 
+    color: var(--preto); 
+}
+
+.btn-hero.btn-info { 
+    background-color: rgba(109, 109, 110, 0.7); 
+    color: var(--branco); 
+}
+
+.hero-carousel .owl-dots { 
+    position: absolute; 
+    bottom: 20px; 
+    right: 3rem; 
+}
+
+.hero-carousel .owl-dot span { 
+    background: rgba(255,255,255,0.5) !important; 
+}
+
+.hero-carousel .owl-dot.active span { 
+    background: var(--branco) !important; 
+}
+
+/* CARROSSÉIS DE CONTEÚDO */
+.carousel-wrapper { 
+    padding: 0; 
+    margin-top: -8vh; 
+    position: relative; 
+    z-index: 10; 
+}
+
+.carousel-section { 
+    margin-bottom: 3rem; /* Aumentando espaço entre seções */
+    position: relative; 
+}
+
+.carousel-title { 
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    margin-bottom: 1rem; 
+    padding: 0 3rem; 
+}
+
+.content-carousel .owl-stage-outer { 
+    padding: 2rem 3rem; 
+    margin: -2rem -3rem; 
+}
+
+.content-carousel .owl-stage { 
+    display: flex; 
+}
+
+.content-carousel .owl-item { 
+    transition: all 0.4s ease; 
+}
+
+.content-carousel .owl-item:hover { 
+    z-index: 100 !important; 
+    transform: scale(1.2);
+}
+
+/* EFEITO HOVER NOS CARDS */
+.item { 
+    position: relative; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: all 0.4s ease; /* Transição movida para o item principal */
+    height: 100%; 
+}
+
+.box-filme { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 4px; 
+}
+
+.info-bar { 
+    background-color: #181818; /* Cor de fundo consistente */
+    padding: 10px; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    transform: translateY(100%); 
+    opacity: 0; 
+    transition: all 0.4s ease; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom-left-radius: 4px; 
+    border-bottom-right-radius: 4px;
+}
+
+.item:hover { 
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.7); 
+}
+
+.item:hover .info-bar { 
+    transform: translateY(0); 
+    opacity: 1; 
+}
+
+.buttons-bar { 
+    display: flex; 
+    gap: 5px; 
+}
+
+.btn-bar-action { 
+    background-color: transparent; 
+    border: 2px solid rgba(255, 255, 255, 0.7); 
+    color: var(--branco); 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+
+.btn-bar-action:hover { 
+    border-color: var(--branco); 
+}
+
+.btn-bar-action.btn-play { 
+    background-color: var(--branco); 
+    color: var(--preto); 
+}
+
+.btn-bar-action.active { 
+    border-color: var(--vermelho); 
+    color: var(--vermelho); 
+}
+
+.btn-modal-trigger { 
+    margin-left: auto; 
+}
+
+/* SETAS DE NAVEGAÇÃO */
+.content-carousel .owl-nav { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    pointer-events: none; 
+}
+
+.nav-btn { 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    height: calc(100% - 4rem); /* Ajuste para não sobrepor o padding */
+    background: rgba(0,0,0,0.4); 
+    width: 3rem; 
+    color: var(--branco); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    pointer-events: all; 
+    z-index: 10; 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+.carousel-section:hover .nav-btn { 
+    opacity: 1; 
+}
+
+.nav-btn.prev-slide { 
+    left: 0; 
+}
+
+.nav-btn.next-slide { 
+    right: 0; 
+}
+
+.owl-nav .disabled { 
+    display: none; 
+}
+
+/* ESTILO DO MODAL */
+.modal-dialog { 
+    max-width: 800px; 
+}
+
+/* ✅ CORRIGIDO: Removida variável --preto-modal que não existia */
+.modal-content { 
+    background-color: #181818; /* Fundo escuro para o modal */
+    color: var(--branco); 
+    border-radius: 8px; 
+    border: none; 
+}
+
+.btn-close { 
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    z-index: 10; 
+    background-color: #2f2f2f;
+    border-radius: 50%; 
+    padding: 0.5em; 
+    opacity: 1; 
+    filter: invert(1);
+    transition: background-color 0.3s;
+}
+.btn-close:hover {
+    background-color: var(--branco);
+}
+
+.modal-body { 
+    padding: 0; 
+}
+
+.modal-hero { 
+    height: 450px; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: flex-end; 
+    padding: 2rem; 
+    position: relative; 
+}
+
+.modal-hero-buttons { 
+    position: relative; 
+    z-index: 2; 
+}
+
+.modal-info-wrapper { 
+    padding: 1rem 2rem 2rem 2rem; 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 2rem; 
+}
+
+.modal-info-right .label { 
+    color: #8c8c8c;
+}
+
+.rating { 
+    border: 1px solid rgba(255,255,255,0.4); 
+    padding: 0 0.5em; 
+    font-size: 0.9rem; 
+}
+
+/* FOOTER */
+.main-footer { 
+    padding: 2.5rem 3rem; 
+    border-top: 1px solid #222; 
+    margin-top: 2rem; 
+}
+
+.footer-container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    color: var(--cinza-texto); 
+}
+
+.social-icons { 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.social-icons a { 
+    color: var(--cinza-texto); 
+    margin-right: 1.5rem; 
+    transition: color 0.3s; 
+}
+
+.social-icons a:hover { 
+    color: var(--branco); 
+}
+
+.footer-links { 
+    list-style: none; 
+    padding: 0; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 1rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.footer-links a { 
+    color: var(--cinza-texto); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+}
+
+.footer-links a:hover { 
+    text-decoration: underline; 
+}
+
+.copyright { 
+    font-size: 0.75rem; 
+}
+
+.profile-menu .dropdown-menu {
+    left: auto !important;
+    right: 100% !important;
+    transform: translateX(-10px);
+}
+
+/* Adicione ao final de style-home.css */
+
+.modal-hero-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-actions-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* Adicione ao final de style-home.css */
+
+/* Estilo para a mensagem de boas-vindas no header */
+.welcome-message {
+    color: var(--cinza-texto);
+    margin-right: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap; /* Impede que o nome quebre a linha */
+    transition: color 0.3s;
+}
+
+.welcome-message:hover {
+    color: var(--branco);
+}
+
+/* Para telas pequenas (mobile), esconde a mensagem para não poluir o layout */
+@media (max-width: 768px) {
+    .welcome-message {
+        display: none;
+    }
+}
